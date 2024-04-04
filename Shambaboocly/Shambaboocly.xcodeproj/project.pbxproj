@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		66EC46B32BBEB82100BDED35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC46B22BBEB82100BDED35 /* AppDelegate.swift */; };
 		66EC46B52BBEB82100BDED35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC46B42BBEB82100BDED35 /* SceneDelegate.swift */; };
-		66EC46B72BBEB82100BDED35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC46B62BBEB82100BDED35 /* ViewController.swift */; };
-		66EC46BA2BBEB82100BDED35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EC46B82BBEB82100BDED35 /* Main.storyboard */; };
+		66EC46B72BBEB82100BDED35 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC46B62BBEB82100BDED35 /* MainViewController.swift */; };
 		66EC46BC2BBEB82400BDED35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66EC46BB2BBEB82400BDED35 /* Assets.xcassets */; };
 		66EC46BF2BBEB82400BDED35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EC46BD2BBEB82400BDED35 /* LaunchScreen.storyboard */; };
+		66EC46C92BBEEABB00BDED35 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC46C82BBEEABB00BDED35 /* MainCell.swift */; };
+		66EC46CB2BBF389100BDED35 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC46CA2BBF389100BDED35 /* UIButton+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		66EC46AF2BBEB82100BDED35 /* Shambaboocly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shambaboocly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66EC46B22BBEB82100BDED35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66EC46B42BBEB82100BDED35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		66EC46B62BBEB82100BDED35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		66EC46B92BBEB82100BDED35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		66EC46B62BBEB82100BDED35 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		66EC46BB2BBEB82400BDED35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66EC46BE2BBEB82400BDED35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66EC46C02BBEB82400BDED35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66EC46C82BBEEABB00BDED35 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		66EC46CA2BBF389100BDED35 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		66EC46B12BBEB82100BDED35 /* Shambaboocly */ = {
 			isa = PBXGroup;
 			children = (
+				66EC46C72BBEEA8400BDED35 /* ViewModel */,
+				66EC46C62BBEEA7D00BDED35 /* View */,
 				66EC46B22BBEB82100BDED35 /* AppDelegate.swift */,
 				66EC46B42BBEB82100BDED35 /* SceneDelegate.swift */,
-				66EC46B62BBEB82100BDED35 /* ViewController.swift */,
-				66EC46B82BBEB82100BDED35 /* Main.storyboard */,
 				66EC46BB2BBEB82400BDED35 /* Assets.xcassets */,
 				66EC46BD2BBEB82400BDED35 /* LaunchScreen.storyboard */,
 				66EC46C02BBEB82400BDED35 /* Info.plist */,
 			);
 			path = Shambaboocly;
+			sourceTree = "<group>";
+		};
+		66EC46C62BBEEA7D00BDED35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66EC46B62BBEB82100BDED35 /* MainViewController.swift */,
+				66EC46C82BBEEABB00BDED35 /* MainCell.swift */,
+				66EC46CA2BBF389100BDED35 /* UIButton+Extension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66EC46C72BBEEA8400BDED35 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +146,6 @@
 			files = (
 				66EC46BF2BBEB82400BDED35 /* LaunchScreen.storyboard in Resources */,
 				66EC46BC2BBEB82400BDED35 /* Assets.xcassets in Resources */,
-				66EC46BA2BBEB82100BDED35 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EC46B72BBEB82100BDED35 /* ViewController.swift in Sources */,
+				66EC46B72BBEB82100BDED35 /* MainViewController.swift in Sources */,
 				66EC46B32BBEB82100BDED35 /* AppDelegate.swift in Sources */,
+				66EC46C92BBEEABB00BDED35 /* MainCell.swift in Sources */,
+				66EC46CB2BBF389100BDED35 /* UIButton+Extension.swift in Sources */,
 				66EC46B52BBEB82100BDED35 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +167,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		66EC46B82BBEB82100BDED35 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				66EC46B92BBEB82100BDED35 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		66EC46BD2BBEB82400BDED35 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +309,6 @@
 				INFOPLIST_FILE = Shambaboocly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +336,6 @@
 				INFOPLIST_FILE = Shambaboocly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
