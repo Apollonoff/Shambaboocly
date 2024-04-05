@@ -59,7 +59,6 @@ class MainViewController: UIViewController {
     private func didTapCreateButton() {
         viewModel.addNewCell()
         tableArray = viewModel.cellsArray
-        print(tableArray)
     }
     
     // add gradient background

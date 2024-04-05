@@ -67,6 +67,7 @@ final class MainViewModel {
             lastThreeCells.removeFirst()
         } else if (lastThreeCells.allSatisfy({ $0 == .dead })) {
             killLife()
+            lastThreeCells = []
         }
     }
     
