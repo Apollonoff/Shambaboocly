@@ -8,6 +8,15 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    private var viewModel = MainViewModel()
+    
+    private var tableArray: [CellState] = [] {
+        didSet {
+            mainTableView.reloadData()
+            scrollToBottom()
+        }
+    }
 
     private let mainTableView: UITableView = {
         let tableView = UITableView()
@@ -33,7 +42,7 @@ class MainViewController: UIViewController {
         navBarAppearance.backgroundColor = UIColor(named: "BGColor1")
         self.navigationItem.standardAppearance = navBarAppearance
         navigationItem.title = "Клеточное наполнение"
-        // setup create button
+        // setup createButton
         setupCreateButton()
         createButton.addTarget(self,
                                action: #selector(didTapCreateButton),
@@ -48,10 +57,12 @@ class MainViewController: UIViewController {
     
     @objc
     private func didTapCreateButton() {
-        //
-        print("create")
+        viewModel.addNewCell()
+        tableArray = viewModel.cellsArray
+        print(tableArray)
     }
     
+    // add gradient background
     private func setupViewBackground() {
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
@@ -59,12 +70,20 @@ class MainViewController: UIViewController {
                            UIColor(named: "BGColor2")?.cgColor ?? UIColor.black.cgColor]
         view.layer.insertSublayer(gradient, at: 0)
     }
+    
+    // automatic scroll to bottom of table view
+    private func scrollToBottom(){
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: self.tableArray.count-1, section: 0)
+            self.mainTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
 }
 
 // MARK: - TableView Data Source
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        tableArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,7 +93,7 @@ extension MainViewController: UITableViewDataSource {
             return MainCell()
         }
         cell.selectionStyle = .none
-        let state = CellState.alive
+        let state = tableArray[indexPath.row]
         cell.configureMainCell(
             title: state.getTitle(),
             desctription: state.getDescription(),
