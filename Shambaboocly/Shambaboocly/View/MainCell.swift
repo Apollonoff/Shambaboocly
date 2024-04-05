@@ -7,45 +7,6 @@
 
 import UIKit
 
-enum CellState {
-    case dead
-    case alive
-    case life
-    
-    func getImageName() -> String {
-        switch self {
-        case .dead:
-            return "deadImage"
-        case .alive:
-            return "aliveImage"
-        case .life:
-            return "lifeImage"
-        }
-    }
-    
-    func getTitle() -> String {
-        switch self {
-        case .dead:
-            return "Мертвая"
-        case .alive:
-            return "Живая"
-        case .life:
-            return "Жизнь"
-        }
-    }
-    
-    func getDescription() -> String {
-        switch self {
-        case .dead:
-            return "или прикидывается"
-        case .alive:
-            return "и шевелится!"
-        case .life:
-            return "Ку-ку!"
-        }
-    }
-}
-
 final class MainCell: UITableViewCell {
     
     static let identifier = "MainCellIdentifier"
@@ -107,7 +68,6 @@ final class MainCell: UITableViewCell {
 }
 // MARK: - Layouts
 private extension MainCell {
-    
     func setupNewContentView() {
         self.contentView.addSubview(newContentView)
         NSLayoutConstraint.activate([
